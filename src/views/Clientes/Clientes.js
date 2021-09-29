@@ -20,7 +20,7 @@ return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7 pb-8" fluid style={{background: '#2e6ac9'}}>
+      <Container className="mt--7 pb-8" fluid style={{background: '#14305d'}}>
       <MaterialTable
          localization={{
             pagination: {

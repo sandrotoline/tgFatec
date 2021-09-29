@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TimePicker,Upload,Button } from 'antd';
+import { DatePicker,Upload,Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button as Botao} from "reactstrap";
 import {
@@ -14,13 +14,17 @@ import {
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
-const { RangePicker } = TimePicker;
+
+function onChange(date, dateString) {
+  console.log(date, dateString);
+}
+
 const Icons = (props) => {
   return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid style={{background: '#2e6ac9'}}>
+      <Container className="mt--7" fluid style={{background: '#14305d'}}>
         {/* Table */}
         <Row>
           <div className="col">
@@ -28,17 +32,17 @@ const Icons = (props) => {
               <CardBody>
               <Form>
                   <h6 className="heading-small mb-4">
-                    Estabelecimento
+                    Cliente
                   </h6>
                   <div className="pl-lg-4">
-                    <Row>
-                      <Col md="4">
+                    <Row md={3} sm={1}>
+                      <Col>
                         <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="input-username"
                           >
-                            Identificação
+                            Nome Completo
                           </label>
                           <Input
                             className="form-control-alternative"
@@ -48,51 +52,30 @@ const Icons = (props) => {
                           />
                         </FormGroup>
                       </Col>
-                      <Col md="3">
+                      <Col>
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-cpf"
+                          >
+                           CPF
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-cpf"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col>
                         <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="input-username"
                           >
-                            Horário de Funcionamento
+                            Data Nascimento
                           </label>
-                          <RangePicker className="form-control-alternative" format={'HH:mm'} style={{padding:"10px"}}/>
-                        </FormGroup>
-                      </Col>
-                      <Col md="3">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-email"
-                          >
-                            Código interno da Prefeitura
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-email"
-                           
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col md="2">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-first-name"
-                          >
-                            Situação
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-situcao"
-                            type="select"
-                          >
-                            <option>Em Funcionamento</option>
-                            <option>Desativado</option>
-                            <option>Em Manutenção</option>
-                            <option>Mudou-se</option>
-                          </Input>
+                          <DatePicker format={'DD/MM/YYYY'}  onChange={onChange} placeholder="" className="form-control-alternative" style={{padding:"10px",width:'100%'}}/>
                         </FormGroup>
                       </Col>
                     </Row>

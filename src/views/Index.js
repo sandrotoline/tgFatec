@@ -65,7 +65,7 @@ const Index = (props) => {
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt--7" fluid style={{background: '#2e6ac9'}}>
+      <Container className="mt--7" fluid style={{background: '#14305d'}}>
         <Row>
           <Col className="mb-5 mb-xl-0" xl="8">
             <Card className="bg-gradient-default shadow">
